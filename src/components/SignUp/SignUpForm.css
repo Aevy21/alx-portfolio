@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 10vh; /* Header height: 1/10th of viewport height */
+    height: 5vh; /* Header height: 1/10th of viewport height */
     background-color: #004d40; /* Dark teal */
     color: white;
     display: flex;

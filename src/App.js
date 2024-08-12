@@ -4,6 +4,7 @@ import Homepage from './components/Homepage/Homepage'; // Adjusted path without 
 import './components/Homepage/Homepage.css'; 
 import SignIn from './components/SignIn/SignInForm'; 
 import SignUp from './components/SignUp/SignUpForm'; 
+import SignIn from './components/Aboutus/AboutUs; 
 
 
 
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/" element={<Homepage />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp/>} />
+                <Route path="/aboutus" element={<AboutUs/>} />
                 {/* Add other routes as necessary */}
             </Routes>
         </Router>

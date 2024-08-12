@@ -6,6 +6,7 @@ import SignIn from './components/SignIn/SignInForm';
 import SignUp from './components/SignUp/SignUpForm'; 
 import AboutUs from './components/Aboutus/AboutUs'; 
 import Policy from '/components/Policy/Policies';
+import Policy from '/components/Help/Helppage';
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
                 <Route path="/signup" element={<SignUp/>} />
                 <Route path="/aboutus" element={<AboutUs/>} />
                 <Route path="/policy" element={<Policy/>} />
-                
+                <Route path="/help" element={<Help/>} />
                 {/* Add other routes as necessary */}
             </Routes>
         </Router>

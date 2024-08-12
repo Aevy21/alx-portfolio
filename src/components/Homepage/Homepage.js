@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+
 import './Homepage.css'; // Import your CSS file
 
 // Define the Homepage component
@@ -16,16 +18,18 @@ const Homepage = () => {
         <div className="logo">PennyPillar</div>
         <div className="hamburger" onClick={toggleNav}>☰</div>
         <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#dashboard">Dashboard</a>
-          <a href="#cashflow">Cash Flow/Budget</a>
-          <a href="#recurring">Recurring Payments</a>
-          <a href="#challenge">Penny Challenge</a>
-          <a href="#login">Login</a>
-          <a href="#signup">Sign Up</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
-          <a href="#help">Help</a>
+          <a to="#home">Home</a>
+          <Link to="#dashboard">Dashboard</Link>
+          <Link to="#cashflow">Cash Flow/Budget</Link>
+          <Link to="#recurring">Recurring Payments</Link>
+          <Link to="#challenge">Penny Challenge</Link>
+          <Link to="#DignIn">Sign in</Link>
+          <Link to="#signup">Sign Up</Link>
+          <Link to="#about">About Us</Link>
+          <Link to="#contact">Contact</Link>
+          <Link to="#help">Help</Link>
+          
+    
         </nav>
       </header>
 

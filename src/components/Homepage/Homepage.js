@@ -222,7 +222,7 @@ const Homepage = () => {
         <footer className="footer">
           <div className="footer-container">
             <div className="branding">
-              <img src="/images/logo.jpg" alt="App Name Logo" className="footer-logo" />
+              <img src="/images/logo.png" alt="App Name Logo" className="footer-logo" />
               <p className="tagline">Building Wealth, One Step at a Time</p>
             </div>
             <div className="footer-nav">

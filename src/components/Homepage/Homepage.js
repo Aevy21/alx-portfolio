@@ -144,7 +144,7 @@ const Homepage = () => {
                             Get notifications for upcoming payments.
                           </li>
                         </ul>
-                        <img src={subscriptions} alt="Subscription Management Screenshot" className="feature-screenshot" />
+                        <img src="/images/subscriptions.jpg" alt="Subscription Management Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
 

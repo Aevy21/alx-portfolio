@@ -4,24 +4,17 @@ import Homepage from './components/Homepage/Homepage.js';  // Adjusted path
 import './components/Homepage/Homepage.css';  // Import your CSS file
 import SignIn from './components/SignIn/SignInForm.js';
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/signin" element={<SignIn />} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </Router>
-  );
-}
-
-
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/signin" element={<SignInPage />} />
+                {/* Add other routes as necessary */}
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
 

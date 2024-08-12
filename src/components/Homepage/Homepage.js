@@ -40,7 +40,7 @@ const Homepage = () => {
           <section className="hero-section">
             <div className="hero-content">
               <div className="hero-logo">
-                <img src="logo.png" alt="PennyPillar Logo" />
+                <img src="/logo.png" alt="PennyPillar Logo" />
               </div>
               <h1 className="hero-name">PennyPillar</h1>
               <h2 className="hero-heading">Unlock Your Financial Potential</h2>
@@ -83,7 +83,7 @@ const Homepage = () => {
                             Receive notifications for overspending.
                           </li>
                         </ul>
-                        <img src="budget.jpg" alt="Budget Tracking Screenshot" className="feature-screenshot" />
+                        <img src="/budget.jpg" alt="Budget Tracking Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
                     
@@ -113,7 +113,7 @@ const Homepage = () => {
                             Get reminders for saving milestones.
                           </li>
                         </ul>
-                        <img src="savings.jpg" alt="Savings Goals Screenshot" className="feature-screenshot" />
+                        <img src="/savings.jpg" alt="Savings Goals Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
 
@@ -143,7 +143,7 @@ const Homepage = () => {
                             Get notifications for upcoming payments.
                           </li>
                         </ul>
-                        <img src="subscriptions.jpg" alt="Subscription Management Screenshot" className="feature-screenshot" />
+                        <img src="/subscriptions.jpg" alt="Subscription Management Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
 
@@ -173,7 +173,7 @@ const Homepage = () => {
                             Receive updates on the latest financial trends.
                           </li>
                         </ul>
-                        <img src="insights.jpg" alt="Financial Insights Screenshot" className="feature-screenshot" />
+                        <img src="/insights.jpg" alt="Financial Insights Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
                     {/* Carousel navigation */}

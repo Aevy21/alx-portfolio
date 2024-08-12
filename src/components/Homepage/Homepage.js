@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import insights from './assets/images/insights.jpg';
-import subscriptions from './assets/images/subscriptions.jpg'; // Adjust the path based on your folder structure
-import logo from './assets/images/logo.png'; // Adjust the path based on your folder structure
-import savings from './assets/images/savings.jpg'; // Adjust path as needed
-import budget from './assets/images/budget.jpg'; // Adjust path as needed
+import insights from '../images/insights.jpg';
+import subscriptions from '../images/subscriptions.jpg'; // Adjust the path based on your folder structure
+import logo from '../images/logo.png'; // Adjust the path based on your folder structure
+import savings from '../images/savings.jpg'; // Adjust path as needed
+import budget from '../images/budget.jpg'; // Adjust path as needed
 
 
 import './Homepage.css'; // Import your CSS file

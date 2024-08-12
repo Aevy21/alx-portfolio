@@ -19,15 +19,15 @@ const Homepage = () => {
         <div className="hamburger" onClick={toggleNav}>☰</div>
         <nav className="nav-links">
           <a to="#home">Home</a>
-          <Link to="#dashboard">Dashboard</Link>
-          <Link to="#cashflow">Cash Flow/Budget</Link>
-          <Link to="#recurring">Recurring Payments</Link>
-          <Link to="#challenge">Penny Challenge</Link>
-          <Link to="#DignIn">Sign in</Link>
-          <Link to="#signup">Sign Up</Link>
-          <Link to="#about">About Us</Link>
-          <Link to="#contact">Contact</Link>
-          <Link to="#help">Help</Link>
+          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/cashflow">Cash Flow/Budget</Link>
+          <Link to="/recurring">Recurring Payments</Link>
+          <Link to="/challenge">Penny Challenge</Link>
+          <Link to="/SignIn">Sign in</Link>
+          <Link to="/signup">Sign Up</Link>
+          <Link to="/about">About Us</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/help">Help</Link>
           
     
         </nav>

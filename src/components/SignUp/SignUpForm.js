@@ -1,7 +1,7 @@
 // src/SignUpPage.js
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link for routing
-import './SignUpPage.css'; // Import custom CSS if needed
+import './SignUpForm.css'; // Import custom CSS if needed
 
 const SignUpPage = () => {
     const toggleNav = () => {

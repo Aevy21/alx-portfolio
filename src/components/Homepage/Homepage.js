@@ -1,10 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import insights from '../images/insights.jpg';
-import subscriptions from '../images/subscriptions.jpg'; // Adjust the path based on your folder structure
-import logo from '../images/logo.png'; // Adjust the path based on your folder structure
-import savings from '../images/savings.jpg'; // Adjust path as needed
-import budget from '../images/budget.jpg'; // Adjust path as needed
 
 
 import './Homepage.css'; // Import your CSS file
@@ -46,7 +41,7 @@ const Homepage = () => {
           <section className="hero-section">
             <div className="hero-content">
               <div className="hero-logo">
-                <img src={logo} alt="PennyPillar Logo" />
+                <img src="/images/logo.png" alt="PennyPillar Logo" />
               </div>
               <h1 className="hero-name">PennyPillar</h1>
               <h2 className="hero-heading">Unlock Your Financial Potential</h2>
@@ -89,7 +84,7 @@ const Homepage = () => {
                             Receive notifications for overspending.
                           </li>
                         </ul>
-                        <img src={budget} alt="Budget Tracking Screenshot" className="feature-screenshot" />
+                        <img src="/images/budget.jpg" alt="Budget Tracking Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
                     
@@ -119,7 +114,7 @@ const Homepage = () => {
                             Get reminders for saving milestones.
                           </li>
                         </ul>
-                        <img src={savings} alt="Savings Goals Screenshot" className="feature-screenshot" />
+                        <img src="/images/savings.png" alt="Savings Goals Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
 
@@ -179,7 +174,7 @@ const Homepage = () => {
                             Receive updates on the latest financial trends.
                           </li>
                         </ul>
-                        <img src={insights} alt="Financial Insights Screenshot" className="feature-screenshot" />
+                        <img src="/images/insights.jpg" alt="Financial Insights Screenshot" className="feature-screenshot" />
                       </div>
                     </div>
                     {/* Carousel navigation */}
@@ -227,7 +222,7 @@ const Homepage = () => {
         <footer className="footer">
           <div className="footer-container">
             <div className="branding">
-              <img src={logo} alt="App Name Logo" className="footer-logo" />
+              <img src="/images/logo.jpg" alt="App Name Logo" className="footer-logo" />
               <p className="tagline">Building Wealth, One Step at a Time</p>
             </div>
             <div className="footer-nav">

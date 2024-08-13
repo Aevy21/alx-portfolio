@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Help.css';
+import './Helppage.css';
 
 const Help = () => {
     const [showNav, setShowNav] = useState(false);

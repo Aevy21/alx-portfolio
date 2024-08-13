@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../Header';
+import Footer from '../Footer';
 
 import './SignInForm.css'; 
 
@@ -22,7 +22,7 @@ const SignInPage = () => {
 
     return (
         <>
-
+        <Header />
             <div className="main-content">
                 <div className="form-container">
                     <div className="header-content">
@@ -59,7 +59,7 @@ const SignInPage = () => {
                 </div>
             </div>
 
-            
+            <Footer />
         </>
     );
 };

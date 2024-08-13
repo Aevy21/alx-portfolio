@@ -30,12 +30,13 @@ footer nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 12px;
+    font-size: 20px;
 }
 
 footer nav ul li a .fa-icon {
-    font-size: 20px;
+    font-size: 50px;
     margin-bottom: 5px;
+    color: #fff;
 }
 
 footer nav ul li.active a .fa-icon, 

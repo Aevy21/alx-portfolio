@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './SignInForm.css'; // Your custom SignIn styles
+import { Link } from 'react-router-dom';
+import Header from '../Header';
+import Footer from '../Footer';
+
+import './SignInForm.css'; 
 
 const SignInPage = () => {
     const [username, setUsername] = useState(''); // Use username instead of email
@@ -19,19 +22,6 @@ const SignInPage = () => {
 
     return (
         <>
-            <header className="header">
-                <div className="logo">PennyPillar</div>
-                <div className="hamburger" onClick={toggleNav}>☰</div>
-                <nav className="nav-links">
-                    <Link to="/">Home</Link>
-                    <Link to="/challenge">Penny Challenge</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/signup">Sign Up</Link>
-                    <Link to="/about">About Us</Link>
-                    <Link to="/contact">Contact</Link>
-                    <Link to="/help">Help</Link>
-                </nav>
-            </header>
 
             <div className="main-content">
                 <div className="form-container">
@@ -69,9 +59,7 @@ const SignInPage = () => {
                 </div>
             </div>
 
-            <footer className="footer">
-                © 2024 PennyPillar. All rights reserved.
-            </footer>
+            
         </>
     );
 };

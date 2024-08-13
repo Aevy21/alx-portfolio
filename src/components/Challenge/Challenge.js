@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Challenge.css'; // Import the CSS file
+import '../Footer';
 
 const numbers = [5, 12, 25, 8, 17, 30, 23, 10, 45, 50, 18, 29, 35, 40, 22, 15, 27, 42, 33, 19,
                  28, 14, 31, 24, 21, 48, 11, 38, 26, 7, 43, 16, 20, 41, 32, 49, 6, 39, 44, 13,
@@ -61,9 +62,7 @@ const Challenge = () => {
                 </div>
             </div>
 
-            <footer className="footer">
-                <p>&copy; 2024 PennyPillar - Empowering Financial Wellness</p>
-            </footer>
+             <footer />
         </div>
     );
 };

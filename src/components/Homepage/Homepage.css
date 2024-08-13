@@ -79,6 +79,11 @@ body, html {
     .header .hamburger {
         display: none;
     }
+
+    .footer {
+        width: 80%; /* Align with the content width */
+        left: 20%;
+    }
 }
 
 /* Styles for smaller screens */

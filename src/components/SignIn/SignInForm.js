@@ -40,14 +40,14 @@ const SignInPage = () => {
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
-                            <label htmlFor="email" className="form-label">Email:</label>
+                            <label htmlFor="username" className="form-label">username:</label>
                             <input
-                                type="email"
+                                type="username "
                                 className="form-control"
-                                id="email"
+                                id=username "
                                 placeholder="Enter your email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                value=username }
+                                onChange={(e) => setUsername(e.target.value)}
                                 required
                             />
                         </div>

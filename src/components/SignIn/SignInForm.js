@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './SignInForm.css'; // Your custom SignIn styles
 
 const SignInPage = () => {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState(''); // Use username instead of email
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add form submission logic here
-        console.log('Sign in:', email, password);
+        console.log('Sign in:', username, password);
     };
 
     const toggleNav = () => {
@@ -40,13 +40,13 @@ const SignInPage = () => {
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
-                            <label htmlFor="username" className="form-label">username:</label>
+                            <label htmlFor="username" className="form-label">Username:</label>
                             <input
-                                type="username "
+                                type="text" // Change to text
                                 className="form-control"
-                                id="username "
+                                id="username"
                                 placeholder="Enter your username"
-                                value=username }
+                                value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 required
                             />

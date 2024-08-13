@@ -12,6 +12,46 @@ const Homepage = () => {
     nav.classList.toggle('nav-open');
   };
 
+  // Define the Homepage component
+const Homepage = () => {
+  const carouselRef = useRef(null);
+  const prevButtonRef = useRef(null);
+  const nextButtonRef = useRef(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    const prevButton = prevButtonRef.current;
+    const nextButton = nextButtonRef.current;
+    let index = 0;
+
+    const showSlide = (slideIndex) => {
+      const totalSlides = carousel.querySelectorAll('.carousel-item').length;
+      if (slideIndex >= totalSlides) {
+        index = 0;
+      } else if (slideIndex < 0) {
+        index = totalSlides - 1;
+      } else {
+        index = slideIndex;
+      }
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    const handlePrevClick = () => showSlide(index - 1);
+    const handleNextClick = () => showSlide(index + 1);
+
+    prevButton.addEventListener('click', handlePrevClick);
+    nextButton.addEventListener('click', handleNextClick);
+
+    // Initialize with the first slide
+    showSlide(index);
+
+    return () => {
+      // Cleanup event listeners on component unmount
+      prevButton.removeEventListener('click', handlePrevClick);
+      nextButton.removeEventListener('click', handleNextClick);
+    };
+  }, []);
+
   return (
     <div>
       {/* Header Section */}

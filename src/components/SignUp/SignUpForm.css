@@ -117,7 +117,7 @@
     flex-direction: column; /* Ensure content stacks vertically */
     min-height: calc(100vh - 18vh); /* Ensure it takes up at least the full viewport height minus header and footer */
     box-sizing: border-box;
-    background-image: url('/images/stock.jpg');
+    background-image: url('stock.jpg');
     background-size: cover;
     background-position: center;
 }

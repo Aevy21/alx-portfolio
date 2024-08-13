@@ -10,7 +10,7 @@ function App() {
 
   return (
     
-      <header/>
+      <header />
       
       <main>
         {/* Hero Section */}

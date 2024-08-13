@@ -246,3 +246,9 @@ body, html {
     z-index: 999;
 }
 
+@media (min-width: 768px) {
+    .footer {
+        width: 80%; /* Align with the content width */
+        left: 20%;
+    }
+}

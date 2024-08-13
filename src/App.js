@@ -7,7 +7,7 @@ import SignUp from './components/SignUp/SignUpForm';
 import About from './components/Aboutus/AboutUs'; 
 import Policy from './components/Policy/Policies';
 import Help from './components/Help/Helppage';
-import Save from './components/Savepenny/SavePenny';
+import Challenge from './components/Challenge/Challenge';
 
 const App = () => {
     return (
@@ -19,7 +19,7 @@ const App = () => {
                 <Route path="/about" element={<About/>} />
                 <Route path="/policy" element={<Policy/>} />
                 <Route path="/help" element={<Help/>} />
-                <Route path="/save" element={<Save/>} />
+                <Route path="/challenge" element={<Challenge/>} />
                 
                 {/* Add other routes as necessary */}
             </Routes>

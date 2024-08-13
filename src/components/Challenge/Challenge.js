@@ -1,6 +1,7 @@
 // Challenge.js
 import React, { useState, useEffect } from 'react';
 import './Challenge.css'; // Import the CSS file
+import '../Footer';
 
 const Challenge = () => {
   // Initialize state

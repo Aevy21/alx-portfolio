@@ -44,8 +44,8 @@ const SignInPage = () => {
                             <input
                                 type="username "
                                 className="form-control"
-                                id=username "
-                                placeholder="Enter your email"
+                                id="username "
+                                placeholder="Enter your username"
                                 value=username }
                                 onChange={(e) => setUsername(e.target.value)}
                                 required

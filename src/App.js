@@ -6,7 +6,7 @@ import SignIn from './components/SignIn/SignInForm';
 import SignUp from './components/SignUp/SignUpForm'; 
 import About from './components/Aboutus/AboutUs'; 
 import Policy from '/components/Policy/Policies';
-import Policy from '/components/Help/Helppage';
+import Help from '/components/Help/Helppage';
 
 
 const App = () => {

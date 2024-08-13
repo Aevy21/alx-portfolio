@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLock, FaShieldAlt, FaFileAlt, FaUsers } from 'react-icons/fa';
-import './policies.css';
+import './Policies.css';
 
 const Policies = () => {
   return (

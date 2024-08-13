@@ -1,12 +1,49 @@
-.footer {
-    background-color: #004d40; /* Dark green */
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: relative; /* Footer adjusts with content */
+
+
+footer {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    height: 8vh; /* Footer height relative to viewport height */
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    box-sizing: border-box; /* Ensure padding does not affect width */
+    border-top: 2px solid #004d40;
+}
+
+footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer nav ul li {
+    text-align: center;
+    flex-grow: 1;
+}
+
+footer nav ul li a {
+    color: #666;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+footer nav ul li a .fa-icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+footer nav ul li.active a .fa-icon, 
+footer nav ul li.active a span {
+    color: #004d40; /* Active icon and text color */
+}
+
+footer nav ul li a:hover .fa-icon, 
+footer nav ul li a:hover span {
+    color: #004d40;
 }

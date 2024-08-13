@@ -1,8 +1,10 @@
 // src/SignUpPage.js
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for routing
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import './SignUpForm.css'; // Import custom CSS if needed
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from '../Header';
+import Footer from '../Footer';
+import './SignUpForm.css';
 
 const SignUpPage = () => {
     const toggleNav = () => {
@@ -11,19 +13,7 @@ const SignUpPage = () => {
 
     return (
         <>
-            <header className="header bg-teal-800 text-white p-4 flex items-center justify-between fixed top-0 left-0 w-full z-50">
-                <div className="logo text-xl font-bold">PennyPillar</div>
-                <div className="hamburger text-2xl cursor-pointer" onClick={toggleNav}>☰</div>
-                <nav className="nav-links hidden md:flex flex-col md:flex-row md:space-x-4">
-                    <Link to="/" className="nav-link">Home</Link>
-                    <Link to="/challenge" className="nav-link">Penny Challenge</Link>
-                    <Link to="/signin" className="nav-link">Login</Link>
-                    <Link to="/signup" className="nav-link">Sign Up</Link>
-                    <Link to="/about" className="nav-link">About Us</Link>
-                    <Link to="/contact" className="nav-link">Contact</Link>
-                    <Link to="/help" className="nav-link">Help</Link>
-                </nav>
-            </header>
+            <Header />
 
             <div className="main-content mt-16 md:mt-0 flex items-center justify-center min-h-screen bg-gray-100">
                 <div className="form-container bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
@@ -49,9 +39,7 @@ const SignUpPage = () => {
                 </div>
             </div>
 
-            <footer className="footer bg-teal-800 text-white p-4 text-center fixed bottom-0 left-0 w-full">
-                &copy; 2024 PennyPillar. All rights reserved.
-            </footer>
+            <Footer />
         </>
     );
 };

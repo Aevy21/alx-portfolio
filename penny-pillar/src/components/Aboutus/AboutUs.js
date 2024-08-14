@@ -11,6 +11,7 @@ const AboutUs = () => {
 
     return (
         <>
+        <div className="wrapper">
             <header className={`header ${showNav ? 'show-nav' : ''}`}>
                 <div className="logo">PennyPillar</div>
                 <nav className="nav-links">

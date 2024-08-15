@@ -1,44 +1,48 @@
-    
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
 
-        /* Main Content and Footer Styles */
-        .main-content {
-            margin-top: 0vh; /* Space for the header */
-            margin-left: 0;
-            padding: 0px;
-            transition: margin-left 0.3s;
-            
-        }
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #004d40; /* Dark green */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000; /* Ensure header is on top of other elements */
+}
 
-        @media (min-width: 768px) {
-            .main-content {
-                margin-left: 20%; /* Space for the header when on the left */
-                margin-top: 0;
-                text-align: center;
-                align-items: center;
-                transition: margin-left 0.3s;
-                
-                
-                
-            }
-        }
+/* Main Wrapper */
+.main-wrapper {
+    margin-top: 80px; /* Space for the header */
+    padding-bottom: 60px; /* Space for the footer */
+}
 
-        
-       
+/* Main Content Styles */
+.main-content {
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
 
-/* foot.css */
+@media (min-width: 768px) {
+    .main-content {
+        margin-left: 20%; /* Space for the sidebar or additional layout element */
+        text-align: center;
+    }
+}
 
-/* General Footer Styles */
+/* Footer Styles */
 .footer {
-    
+    background-color: #004d40; /* Dark green */
     color: #fff;
     padding: 40px 20px;
-    font-family: Arial, sans-serif;
-    
     text-align: center;
-    flex-direction: column;
-    background-color: #004d40;
-    background-color: #004d40; /* Dark green */
-            
+    position: relative;
 }
 
 .footer-container {
@@ -191,31 +195,15 @@
 }
 
 /* Legal Information */
-.footer-legal ul {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-legal li {
-    margin-bottom: 5px;
-}
-
-/* Company Information */
-.footer-company ul {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-company li {
-    margin-bottom: 5px;
-}
-
-/* Support & Resources */
+.footer-legal ul,
+.footer-company ul,
 .footer-support ul {
     display: flex;
     flex-direction: column;
 }
 
+.footer-legal li,
+.footer-company li,
 .footer-support li {
     margin-bottom: 5px;
 }
@@ -255,8 +243,6 @@
         flex-direction: column;
     }
 }
-
-
 
 /* General Hero Section Styles */
 .hero-section {
@@ -371,7 +357,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     align-items: center;
-    
 }
 
 .icon {
@@ -429,210 +414,3 @@
         padding: 10px 20px;
     }
 }
-
-
-
-/* styles.css */
-
-
-.infographic {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.infographic-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.feature-icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
-}
-
-.feature-title {
-    font-size: 24px;
-    margin: 0;
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.feature-list li {
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-.check-icon {
-    width: 24px;
-    height: 24px;
-    fill: #28a745;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-.feature-screenshot {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-
-.infographic-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.infographic {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-.infographic h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.feature-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    fill: green; /* Customize color as needed */
-}
-
-.screenshot {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-}
-
-
-
-
-.infographic-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f8f8f8;
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%; /* Full width of the screen */
-    overflow: hidden;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 20px;
-}
-
-.infographic-header {
-    display: flex;
-    align-items: center;
-}
-
-.feature-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.feature-title {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-}
-
-.feature-list li {
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-.check-icon {
-    width: 24px; /* Increased size */
-    height: 24px; /* Increased size */
-    margin-right: 10px;
-    fill: green; /* Green color */
-}
-
-.feature-screenshot {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent; /* Transparent background */
-    border: none;
-    color: green; /* Arrow color */
-    font-size: 48px; /* Increased size */
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-}
-
-.carousel-nav.prev {
-    left: 10px;
-}
-
-.carousel-nav.next {
-    right: 10px;
-}
-
-.carousel-nav:hover {
-    color: darkgreen; /* Darker color on hover */
-}
-
-@media (max-width: 768px) {
-    .carousel-nav {
-        font-size: 36px; /* Smaller arrows on smaller screens */
-        padding: 8px;
-    }
-}
-

@@ -386,7 +386,9 @@
     color: #fff;
     text-align: center;
     padding: 20px;
-    
+    background-image: url('main.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-logo img {
@@ -750,3 +752,4 @@
         padding: 8px;
     }
 }
+

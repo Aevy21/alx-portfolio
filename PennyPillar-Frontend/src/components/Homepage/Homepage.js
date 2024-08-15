@@ -2,8 +2,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css';
+import { faCheck } from '@fortawesome/react-fontawesome';
 
 const Homepage = () => {
+    const toggleNav = () => {
+        setNavOpen(!navOpen);
+    };
+
     return (
         <div>
             <header className="header">

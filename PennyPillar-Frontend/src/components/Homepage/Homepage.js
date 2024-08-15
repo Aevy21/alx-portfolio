@@ -174,8 +174,8 @@ const Homepage = () => {
             <div className="footer-legal">
               <h3>Legal</h3>
               <ul>
-                <li><link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><link to="/terms-service">Terms of Service</Link></li>
+                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link to="/terms-service">Terms of Service</Link></li>
               </ul>
             </div>
             <div className="footer-contact">

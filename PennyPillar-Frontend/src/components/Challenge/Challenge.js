@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SavingsChallenge.css'; // Assuming CSS is moved to a separate file
+import './Challenge.css'; // Assuming CSS is moved to a separate file
 import '../Footer';
 
 const SavingsChallenge = () => {

@@ -1,7 +1,6 @@
 // Homepage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine, faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css'; // Add any additional CSS if needed
@@ -177,18 +176,7 @@ const Homepage = () => {
                             <p className="contact-phone">Phone: (123) 456-7890</p>
                         </div>
                         <div className="social-media-links">
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faFacebookF} />
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faTwitter} />
-                            </a>
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faInstagram} />
-                            </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faLinkedinIn} />
-                            </a>
+                            
                         </div>
                     </section>
                 </section>

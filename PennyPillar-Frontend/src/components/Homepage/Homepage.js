@@ -17,7 +17,7 @@ const Homepage = () => {
         'Set and manage budget limits.',
         'Receive notifications for overspending.'
       ],
-      image: 'budget.jpg'
+      image: './images/budget.jpg'
     },
     {
       title: 'Savings Goals',
@@ -35,7 +35,7 @@ const Homepage = () => {
         'Set and manage payment reminders.',
         'Get notifications for upcoming payments.'
       ],
-      image: 'subscriptions.jpg'
+      image: './images/subscriptions.jpg'
     },
     {
       title: 'Insights',
@@ -44,7 +44,7 @@ const Homepage = () => {
         'Access strategies to save money and manage your budget effectively.',
         'Receive expert advice on improving your financial health.'
       ],
-      image: 'insights.jpg'
+      image: './images/insights.jpg'
     },
     {
       title: 'Save A Penny a Day',
@@ -53,7 +53,7 @@ const Homepage = () => {
         'Monitor your progress visually.',
         'Get reminders for saving milestones.'
       ],
-      image: 'penny.jpg'
+      image: './images/penny.jpg'
     }
   ];
 
@@ -75,7 +75,7 @@ const Homepage = () => {
         <section className="hero-section">
           <div className="hero-content">
             <div className="hero-logo">
-              <img src="logo.png" alt="PennyPillar Logo" />
+              <img src="./images/logo.png" alt="PennyPillar Logo" />
             </div>
             <h1 className="hero-name">PennyPillar</h1>
             <h2 className="hero-heading">Unlock Your Financial Potential</h2>
@@ -141,7 +141,7 @@ const Homepage = () => {
                 <p className="value-text">Our intuitive tools help you see exactly where your money goes. Use real-time data to evaluate your spending, savings, and investments to make smarter choices for your financial future.</p>
               </div>
             </div>
-            <a href="#get-started" className="cta-button">Start Your Journey</a>
+            <Link to="/signin" className="cta-button">Start Your Journey</a>
           </div>
         </section>
 
@@ -149,26 +149,26 @@ const Homepage = () => {
         <footer className="footer">
           <div className="footer-container">
             <div className="branding">
-              <img src="logo.png" alt="App Name Logo" className="footer-logo" />
+              <img src="./images/logo.png" alt="App Name Logo" className="footer-logo" />
               <p className="tagline">Building Wealth, One Step at a Time</p>
             </div>
             <div className="footer-nav">
               <h3>Quick Links</h3>
               <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><Link to="#home">Home</Link></li>
+                <li><Link to="#about">About Us</Link></li>
+                <li><Link to="#features">Features</Link></li>
+                <li><Link to="#contact">Contact Us</Link></li>
               </ul>
             </div>
             <div className="footer-products">
               <h3>Our Products</h3>
               <ul>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#budget-tools">Budget Tools</a></li>
-                <li><a href="#investment-plans">Investment Plans</a></li>
-                <li><a href="#savings-challenge">Savings Challenge</a></li>
-                <li><a href="#financial-tips">Financial Tips</a></li>
+                <li><Link to="/dashboard">Dashboard</a></li>
+                <li><Link to="/budget-tools">Budget Tools</a></li>
+                <li><Link to="/investment-plans">Investment Plans</a></li>
+                <li><Link to="/savings-challenge">Savings Challenge <Link></li>
+                <li><Link to="/financial-tips">Financial Tips</a></li>
               </ul>
             </div>
             <div className="footer-legal">
@@ -182,7 +182,7 @@ const Homepage = () => {
               <h3>Contact Us</h3>
               <ul>
                 <li>Email: support@pennypillar.com</li>
-                <li>Phone: (123) 456-7890</li>
+                <li>Phone: (27) 456-7890</li>
               </ul>
             </div>
           </div>

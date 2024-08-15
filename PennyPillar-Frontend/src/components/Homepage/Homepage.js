@@ -19,7 +19,7 @@ const Homepage = () => {
         <div className="logo">PennyPillar</div>
         <div className="hamburger" onClick={toggleNav}>☰</div>
         <nav className="nav-links">
-          <a to="#home">Home</a>
+          <Link to="/home">Home</Link>
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/cashflow">Cash Flow/Budget</Link>
           <Link to="/recurring">Recurring Payments</Link>
@@ -27,7 +27,6 @@ const Homepage = () => {
           <Link to="/SignIn">Sign in</Link>
           <Link to="/signup">Sign Up</Link>
           <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact</Link>
           <Link to="/help">Help</Link>
           
     
@@ -38,18 +37,29 @@ const Homepage = () => {
       <div className="main-content">
         <main>
           {/* Hero Section */}
-          <section className="hero-section">
-            <div className="hero-content">
-              <div className="hero-logo">
-                <img src="/images/logo.png" alt="PennyPillar Logo" />
-              </div>
-              <h1 className="hero-name">PennyPillar</h1>
-              <h2 className="hero-heading">Unlock Your Financial Potential</h2>
-              <p className="hero-subheading">Empower yourself with tools and insights to make smarter financial decisions.</p>
-              <p className="hero-tagline">Building Wealth, One Step at a Time</p>
-              <a href="#get-started" className="hero-button">Get Started</a>
-            </div>
-          </section>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <!-- Logo -->
+                    <div class="hero-logo">
+                        <img src="logo.png" alt="PennyPillar Logo">
+                    </div>
+                    
+                    <!-- Name -->
+                    <h1 class="hero-name">PennyPillar</h1>
+                    
+                    <!-- Heading -->
+                    <h2 class="hero-heading">Unlock Your Financial Potential</h2>
+                    
+                    <!-- Subheading -->
+                    <p class="hero-subheading">Empower yourself with tools and insights to make smarter financial decisions.</p>
+                    
+                    <!-- Tagline -->
+                    <p class="hero-tagline">Building Wealth, One Step at a Time</p>
+                    
+                    <!-- Call to Action Button -->
+                    <a href="#get-started" class="hero-button">Get Started</a>
+                </div>
+            </section>
 
           {/* Infographic Section */}
           <section>

@@ -49,5 +49,4 @@ The PennyPillar Backend API uses token-based authentication to secure the endpoi
 Contributions to the PennyPillar Backend API are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
 
 ## License
-No license has been specified for this project yet.
-
+No license has been specified for this pr

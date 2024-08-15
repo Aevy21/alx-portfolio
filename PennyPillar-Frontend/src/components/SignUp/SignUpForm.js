@@ -35,7 +35,7 @@ const SignUpPage = () => {
 
     return (
         <>
-            <Header />
+            <Header isLoggedIn={isLoggedIn} />
 
             <div className="main-content mt-16 md:mt-0 flex items-center justify-center min-h-screen bg-gray-100">
                 <div className="form-container bg-white p-6 rounded-lg shadow-lg max-w-md w-full">

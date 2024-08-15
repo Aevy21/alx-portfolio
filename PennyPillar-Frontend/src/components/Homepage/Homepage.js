@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign, faPiggyBank, faChartLine, faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css'; // Add any additional CSS if needed
 
 const Homepage = () => {
@@ -197,17 +197,16 @@ const Homepage = () => {
                 <div className="footer-content">
                     <section className="social-media">
                         <a href="https://www.facebook.com" className="social-icon">
-                            <FontAwesomeIcon icon={faFacebookF} />
+                            
                         </a>
                         <a href="https://twitter.com" className="social-icon">
-                            <FontAwesomeIcon icon={faTwitter} />
+                            
                         </a>
                         <a href="https://www.instagram.com" className="social-icon">
-                            <FontAwesomeIcon icon={faInstagram} />
+                            
                         </a>
                         <a href="https://www.linkedin.com" className="social-icon">
-                            <FontAwesomeIcon icon={faLinkedinIn} />
-                        </a>
+                            </a>
                     </section>
                     <section className="footer-links">
                         <Link to="#about">About Us</Link>

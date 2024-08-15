@@ -27,7 +27,7 @@ const Homepage = () => {
         'Monitor your progress visually.',
         'Get reminders for saving milestones.'
       ],
-      image: 'savings.jpg'
+      image: './images/savings.jpg'
     },
     {
       title: 'Subscription Management',

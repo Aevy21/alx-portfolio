@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Challenge.css'; // Assuming CSS is moved to a separate file
 import '../Footer';
 
-const SavingsChallenge = () => {
+const Challenge = () => {
   // State management
   const [totalAmount, setTotalAmount] = useState(0);
   const [isGoalFormVisible, setIsGoalFormVisible] = useState(false);

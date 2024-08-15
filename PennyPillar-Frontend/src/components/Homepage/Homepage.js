@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css'; // Add any additional CSS if needed
 import  { useState } from 'react';
-import './Footer';
+import '../Footer';
 
 
 

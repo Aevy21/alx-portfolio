@@ -164,18 +164,18 @@ const Homepage = () => {
             <div className="footer-products">
               <h3>Our Products</h3>
               <ul>
-                <li><Link to="/dashboard">Dashboard</a></li>
-                <li><Link to="/budget-tools">Budget Tools</a></li>
-                <li><Link to="/investment-plans">Investment Plans</a></li>
-                <li><Link to="/savings-challenge">Savings Challenge <Link></li>
-                <li><Link to="/financial-tips">Financial Tips</a></li>
+                <li><Link to="/dashboard">Dashboard</Link></li>
+                <li><Link to="/budget-tools">Budget Tools</Link></li>
+                <li><Link to="/investment-plans">Investment Plans</Link></li>
+                <li><Link to="/savings-challenge">Savings Challenge </Link></li>
+                <li><Link to="/financial-tips">Financial Tips</Link></li>
               </ul>
             </div>
             <div className="footer-legal">
               <h3>Legal</h3>
               <ul>
-                <li><a href="#privacy-policy">Privacy Policy</a></li>
-                <li><a href="#terms-service">Terms of Service</a></li>
+                <li><link to="/privacy-policy">Privacy Policy</Link></li>
+                <li><link to="/terms-service">Terms of Service</Link></li>
               </ul>
             </div>
             <div className="footer-contact">

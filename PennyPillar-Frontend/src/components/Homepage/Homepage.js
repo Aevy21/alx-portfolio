@@ -1,19 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign, faPiggyBank, faChartLine, faCheck } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css';
-import { faCheck } from '@fortawesome/react-fontawesome';
 
 const Homepage = () => {
+    const [navOpen, setNavOpen] = useState(false);
+    const navRef = useRef(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
+
     const toggleNav = () => {
         setNavOpen(!navOpen);
+        if (navRef.current) {
+            navRef.current.classList.toggle('nav-open');
+        }
+    };
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const carouselItems = [
+        {
+            title: "Budget Tracking: Set limits, track expenses, and stay on top of your budget",
+            features: [
+                "Track all your expenses easily.",
+                "Set and manage budget limits.",
+                "Receive notifications for overspending."
+            ],
+            image: "budget.jpg"
+        },
+        {
+            title: "Savings Goals: Set and achieve your financial goals.",
+            features: [
+                "Create and manage savings goals.",
+                "Monitor your progress.",
+                "Get tips on how to save more efficiently."
+            ],
+            image: "savings.jpg"
+        },
+        {
+            title: "Investment Planning: Make informed investment decisions.",
+            features: [
+                "Track your investments.",
+                "Receive tailored investment advice.",
+                "Monitor market trends."
+            ],
+            image: "investments.jpg"
+        }
+    ];
+
+    const nextSlide = () => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % carouselItems.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prevSlide) => (prevSlide === 0 ? carouselItems.length - 1 : prevSlide - 1));
     };
 
     return (
         <div>
             <header className="header">
                 <div className="logo">PennyPillar</div>
-                <div className="hamburger" onClick={() => toggleNav()}>☰</div>
+                <div className="hamburger" onClick={toggleNav}>☰</div>
                 <nav className="nav-links">
                     <a href="#home">Home</a>
                     <a href="#dashboard">Dashboard</a>
@@ -51,33 +96,24 @@ const Homepage = () => {
                             <div className="carousel-item">
                                 <div className="infographic">
                                     <div className="infographic-header">
-                                        <h2 className="feature-title">Budget Tracking: Set limits, track expenses, and stay on top of your budget</h2>
+                                        <h2 className="feature-title">{carouselItems[currentSlide].title}</h2>
                                     </div>
                                     <ul className="feature-list">
-                                        <li>
-                                            <FontAwesomeIcon icon={faCheck} className="check-icon" />
-                                            Track all your expenses easily.
-                                        </li>
-                                        <li>
-                                            <FontAwesomeIcon icon={faCheck} className="check-icon" />
-                                            Set and manage budget limits.
-                                        </li>
-                                        <li>
-                                            <FontAwesomeIcon icon={faCheck} className="check-icon" />
-                                            Receive notifications for overspending.
-                                        </li>
+                                        {carouselItems[currentSlide].features.map((feature, index) => (
+                                            <li key={index}>
+                                                <FontAwesomeIcon icon={faCheck} className="check-icon" />
+                                                {feature}
+                                            </li>
+                                        ))}
                                     </ul>
-                                    <img src="budget.jpg" alt="Budget Tracking Screenshot" className="feature-screenshot" />
+                                    <img src={carouselItems[currentSlide].image} alt="Feature Screenshot" className="feature-screenshot" />
                                 </div>
                             </div>
-
-                            {/* Repeat similar structure for other carousel items */}
-                            {/* ... */}
                         </div>
 
                         <div className="carousel-nav">
-                            <button className="prev">&#10094;</button>
-                            <button className="next">&#10095;</button>
+                            <button className="prev" onClick={prevSlide}>&#10094;</button>
+                            <button className="next" onClick={nextSlide}>&#10095;</button>
                         </div>
                     </div>
                 </section>

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css'; // Add any additional CSS if needed
 import  { useState } from 'react';
+import './Footer';
 
 
 
@@ -14,7 +15,7 @@ function Homepage() {
     {
       title: 'Budget Tracking',
       description: 'Set limits, track expenses, and stay on top of your budget',
-      img: 'budget.jpg',
+      img: './images/budget.jpg',
       features: [
         'Track all your expenses easily.',
         'Set and manage budget limits.',
@@ -24,7 +25,7 @@ function Homepage() {
     {
       title: 'Savings Goals',
       description: 'Visualize your savings progress and achieve financial milestones.',
-      img: 'savings.jpg',
+      img: './images/savings.jpg',
       features: [
         'Set and track savings goals.',
         'Monitor your progress visually.',
@@ -34,7 +35,7 @@ function Homepage() {
     {
       title: 'Subscription Management',
       description: 'Track your subscriptions and set payment reminders',
-      img: 'subscriptions.jpg',
+      img: './images/subscriptions.jpg',
       features: [
         'Monitor all your active subscriptions.',
         'Set and manage payment reminders.',
@@ -44,7 +45,7 @@ function Homepage() {
     {
       title: 'Insights',
       description: 'Discover tips and strategies to improve your financial habits',
-      img: 'insights.jpg',
+      img: './images/insights.jpg',
       features: [
         'Get personalized financial tips based on your spending habits.',
         'Access strategies to save money and manage your budget effectively.',
@@ -54,7 +55,7 @@ function Homepage() {
     {
       title: 'Save A Penny a Day',
       description: 'A fun way to save more by challenging yourself every day',
-      img: 'penny.jpg',
+      img: './images/penny.jpg',
       features: [
         'Set and track savings goals.',
         'Monitor your progress visually.',
@@ -73,32 +74,14 @@ function Homepage() {
 
   return (
     <div>
-      <header className="header">
-        <div className="logo">PennyPillar</div>
-        <div className="hamburger" onClick={() => document.querySelector('.nav-links').classList.toggle('nav-open')}>
-          ☰
-        </div>
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#dashboard">Dashboard</a>
-          <a href="#cashflow">Cash Flow</a>
-          <a href="#budget">Budget</a>
-          <a href="#recurring">Recurring Payments</a>
-          <a href="#challenge">Penny Challenge</a>
-          <a href="#login">Login</a>
-          <a href="#signup">Sign Up</a>
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
-          <a href="#help">Help</a>
-        </nav>
-      </header>
+      <header />
 
       <div className="main-content">
         <main>
-          <section className="hero-section" style={{ backgroundImage: 'url(hero-background.jpg)' }}>
+          <section className="hero-section" style={{ backgroundImage: 'url(./images/main.jpg)' }}>
             <div className="hero-content">
               <div className="hero-logo">
-                <img src="logo.png" alt="PennyPillar Logo" />
+                <img src="./images/logo.png" alt="PennyPillar Logo" />
               </div>
               <h1 className="hero-name">PennyPillar</h1>
               <h2 className="hero-heading">Unlock Your Financial Potential</h2>
@@ -180,7 +163,7 @@ function Homepage() {
           <footer className="footer">
             <div className="footer-container">
               <div className="branding">
-                <img src="logo.png" alt="App Name Logo" className="footer-logo" />
+                <img src="./images/logo.png" alt="App Name Logo" className="footer-logo" />
                 <p className="tagline">Building Wealth, One Step at a Time</p>
               </div>
               <div className="footer-nav">

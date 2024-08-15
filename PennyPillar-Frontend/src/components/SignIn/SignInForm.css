@@ -1,11 +1,12 @@
+/* Body and HTML */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100%; /* Ensure the body and HTML take full height */
-    
 }
 
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -41,16 +42,12 @@ body, html {
 /* Styles for wider screens */
 @media (min-width: 768px) {
     .header {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 20%;
         height: 100vh; /* Full viewport height */
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         padding: 1rem;
-        z-index: 1000;
     }
 
     .header .logo {
@@ -85,14 +82,10 @@ body, html {
 @media (max-width: 767px) {
     .header {
         height: 8vh;
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-       
     }
 
     .header .nav-links {
@@ -124,22 +117,23 @@ body, html {
 
 /* Main Content and Footer Styles */
 .main-content {
-   
     padding: 20px;
     display: flex;
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
-    min-height: 80vh; /* Ensure it takes up at least 80% of the viewport height */
+    min-height: calc(100vh - 13vh); /* Adjust for header and footer height */
+    margin-top: 5vh; /* Adjust for header height */
     transition: margin-left 0.3s;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 @media (min-width: 768px) {
     .main-content {
         margin-left: 20%; /* Space for the header when on the left */
-        margin-top: 0;
     }
 }
 
+/* Footer */
 .footer {
     background-color: #004d40; /* Dark teal */
     color: white;

@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../Header';
 import Footer from '../Footer';
-
 import './SignInForm.css';
 import axiosInstance from '../../axiosConfig';
 
 const SignInPage = () => {
     const [username, setUsername] = useState(''); // Use username instead of email
     const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -19,6 +19,7 @@ const SignInPage = () => {
             
             // Store the token if login is successful
             localStorage.setItem('authToken', response.data.token);
+            setIsLoggedIn(true); // Update login state
 
             // Redirect to the home page 
             navigate('/');
@@ -27,14 +28,9 @@ const SignInPage = () => {
         }
     };
 
-    // const toggleNav = () => {
-    //     const navLinks = document.querySelector('.header .nav-links');
-    //     navLinks.classList.toggle('show-nav');
-    // };
-
     return (
         <>
-        <Header />
+            <Header isLoggedIn={isLoggedIn} /> {/* Pass isLoggedIn to Header */}
             <div className="main-content">
                 <div className="form-container">
                     <div className="header-content">
@@ -70,7 +66,6 @@ const SignInPage = () => {
                     </form>
                 </div>
             </div>
-
             <Footer />
         </>
     );

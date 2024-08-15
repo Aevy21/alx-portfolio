@@ -1,7 +1,7 @@
 // Homepage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './foot.css'; // Import your CSS
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine, faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css'; // Add any additional CSS if needed

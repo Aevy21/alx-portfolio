@@ -14,6 +14,10 @@
                 margin-left: 20%; /* Space for the header when on the left */
                 margin-top: 0;
                 text-align: center;
+                align-items: center;
+                transition: margin-left 0.3s;
+                
+                
                 
             }
         }

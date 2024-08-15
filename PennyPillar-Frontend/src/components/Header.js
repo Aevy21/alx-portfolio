@@ -22,12 +22,11 @@ const Header = ({ isLoggedIn }) => {
         )}
         {!isLoggedIn ? (
           <>
-            <Link to="/signin">SignIn</Link>
+            <Link to="/signin">Sign In</Link>
             <Link to="/signup">Sign Up</Link>
           </>
         ) : null}
         <Link to="/about">About Us</Link>
-        <Link to="/contact">Contact</Link>
         <Link to="/help">Help</Link>
       </nav>
     </header>

@@ -141,7 +141,7 @@ const Homepage = () => {
                 <p className="value-text">Our intuitive tools help you see exactly where your money goes. Use real-time data to evaluate your spending, savings, and investments to make smarter choices for your financial future.</p>
               </div>
             </div>
-            <Link to="/signin" className="cta-button">Start Your Journey</a>
+            <Link to="/signin" className="cta-button">Start Your Journey</Link>
           </div>
         </section>
 

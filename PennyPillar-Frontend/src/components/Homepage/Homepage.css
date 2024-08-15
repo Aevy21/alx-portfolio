@@ -1,10 +1,5 @@
     
-       body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100%; /* Ensure the body and HTML take full height */
-        }
+       
 
         .header {
             position: fixed;
@@ -155,6 +150,7 @@
     flex-direction: column;
     background-color: #004d40;
     background-color: #004d40; /* Dark green */
+    
             
 }
 
@@ -164,6 +160,7 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
+    position: relative;
 }
 
 /* Branding & Logo */

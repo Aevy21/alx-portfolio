@@ -5,16 +5,11 @@ import './Homepage.css';
 
 const Homepage = () => {
     const [navOpen, setNavOpen] = useState(false);
-    const navRef = useRef(null);
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const toggleNav = () => {
         setNavOpen(!navOpen);
-        if (navRef.current) {
-            navRef.current.classList.toggle('nav-open');
-        }
     };
-    const [currentSlide, setCurrentSlide] = useState(0);
 
     const carouselItems = [
         {
@@ -59,7 +54,7 @@ const Homepage = () => {
             <header className="header">
                 <div className="logo">PennyPillar</div>
                 <div className="hamburger" onClick={toggleNav}>☰</div>
-                <nav className="nav-links">
+                <nav className={`nav-links ${navOpen ? 'nav-open' : ''}`}>
                     <a href="#home">Home</a>
                     <a href="#dashboard">Dashboard</a>
                     <a href="#cashflow">Cash Flow</a>

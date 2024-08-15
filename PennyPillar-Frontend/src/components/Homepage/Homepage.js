@@ -1,199 +1,228 @@
-
-import React, { useState } from 'react';
-import Header from '../Header'; // Import Header component
-import './Homepage.css'; // Import your custom CSS for styling
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
+// Homepage.js
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './foot.css'; // Import your CSS
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDollarSign, faPiggyBank, faChartLine, faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-solid-svg-icons';
+import './Homepage.css'; // Add any additional CSS if needed
 
 const Homepage = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Example state
+    return (
+        <div>
+            <header className="header">
+                <div className="logo">PennyPillar</div>
+                <div className="hamburger" onClick={() => document.querySelector('.nav-links').classList.toggle('nav-open')}>☰</div>
+                <nav className="nav-links">
+                    <Link to="#home">Home</Link>
+                    <Link to="#dashboard">Dashboard</Link>
+                    <Link to="#cashflow">Cash Flow</Link>
+                    <Link to="#budget">Budget</Link>
+                    <Link to="#recurring">Recurring Payments</Link>
+                    <Link to="#challenge">Penny Challenge</Link>
+                    <Link to="#login">Login</Link>
+                    <Link to="#signup">Sign Up</Link>
+                    <Link to="#about">About Us</Link>
+                    <Link to="#contact">Contact</Link>
+                    <Link to="#help">Help</Link>
+                </nav>
+            </header>
 
-  const slides = [
-    {
-      title: 'Budget Tracking',
-      description: [
-        'Track all your expenses easily.',
-        'Set and manage budget limits.',
-        'Receive notifications for overspending.'
-      ],
-      image: './images/budget.jpg'
-    },
-    {
-      title: 'Savings Goals',
-      description: [
-        'Set and track savings goals.',
-        'Monitor your progress visually.',
-        'Get reminders for saving milestones.'
-      ],
-      image: './images/savings.jpg'
-    },
-    {
-      title: 'Subscription Management',
-      description: [
-        'Monitor all your active subscriptions.',
-        'Set and manage payment reminders.',
-        'Get notifications for upcoming payments.'
-      ],
-      image: './images/subscriptions.jpg'
-    },
-    {
-      title: 'Insights',
-      description: [
-        'Get personalized financial tips based on your spending habits.',
-        'Access strategies to save money and manage your budget effectively.',
-        'Receive expert advice on improving your financial health.'
-      ],
-      image: './images/insights.jpg'
-    },
-    {
-      title: 'Save A Penny a Day',
-      description: [
-        'Set and track savings goals.',
-        'Monitor your progress visually.',
-        'Get reminders for saving milestones.'
-      ],
-      image: './images/penny.jpg'
-    }
-  ];
-
-  const handlePrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
-  };
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
-  };
-
-  return (
-    <div className="homepage">
-      <Header isLoggedIn={isLoggedIn} />
-
-      {/* Main Wrapper */}
-      <div className="main-wrapper">
-        {/* Main Content */}
-        <main>
-          {/* Hero Section */}
-          <section className="hero-section">
-            <div className="hero-content">
-              <div className="hero-logo">
-                <img src="./images/logo.png" alt="PennyPillar Logo" />
-              </div>
-              <h1 className="hero-name">PennyPillar</h1>
-              <h2 className="hero-heading">Unlock Your Financial Potential</h2>
-              <p className="hero-subheading">Empower yourself with tools and insights to make smarter financial decisions.</p>
-              <p className="hero-tagline">Building Wealth, One Step at a Time</p>
-              <a href="#get-started" className="hero-button">Get Started</a>
-            </div>
-          </section>
-
-          {/* Infographic Section */}
-          <section className="infographic-container">
-            <h2 className="section-title">Explore the Features That Matter to You</h2>
-            <div className="carousel">
-              {slides.map((slide, index) => (
-                <div
-                  key={index}
-                  className={`carousel-item ${index === currentSlide ? 'active' : ''}`}
-                >
-                  <div className="infographic">
-                    <div className="infographic-header">
-                      <h2 className="feature-title">{slide.title}</h2>
+            <main>
+                {/* Hero Section */}
+                <section className="hero-section">
+                    <div className="hero-content">
+                        <div className="hero-logo">
+                            <img src="logo.png" alt="PennyPillar Logo" />
+                        </div>
+                        <h1 className="hero-name">PennyPillar</h1>
+                        <h2 className="hero-heading">Unlock Your Financial Potential</h2>
+                        <p className="hero-subheading">Empower yourself with tools and insights to make smarter financial decisions.</p>
+                        <p className="hero-tagline">Building Wealth, One Step at a Time</p>
+                        <Link to="#get-started" className="hero-button">Get Started</Link>
                     </div>
-                    <ul className="feature-list">
-                      {slide.description.map((desc, i) => (
-                        <li key={i}>{desc}</li>
-                      ))}
-                    </ul>
-                    <img src={slide.image} alt={`${slide.title} Screenshot`} className="feature-screenshot" />
-                  </div>
-                </div>
-              ))}
+                </section>
 
-              {/* Carousel Navigation */}
-              <button className="carousel-nav prev" onClick={handlePrevSlide}>&#10094;</button>
-              <button className="carousel-nav next" onClick={handleNextSlide}>&#10095;</button>
-            </div>
-          </section>
+                {/* Infographic Section */}
+                <section className="page-container">
+                    <section className="infographic-container">
+                        <h2 className="section-title">Explore the Features That Matter to You</h2>
+                        <div className="carousel">
+                            {/* Carousel Item 1 */}
+                            <div className="carousel-item">
+                                <div className="infographic">
+                                    <div className="infographic-header">
+                                        <h2 className="feature-title">Budget Tracking: Set limits, track expenses, and stay on top of your budget</h2>
+                                    </div>
+                                    <ul className="feature-list">
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Track all your expenses easily.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Set and manage budget limits.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Receive notifications for overspending.
+                                        </li>
+                                    </ul>
+                                    <img src="budget.jpg" alt="Budget Tracking Screenshot" className="feature-screenshot" />
+                                </div>
+                            </div>
+                            
+                            {/* Carousel Item 2 */}
+                            <div className="carousel-item">
+                                <div className="infographic">
+                                    <div className="infographic-header">
+                                        <h2 className="feature-title">Savings Goals: Visualize your savings progress and achieve financial milestones.</h2>
+                                    </div>
+                                    <ul className="feature-list">
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Set and track savings goals.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Monitor your progress visually.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Get reminders for saving milestones.
+                                        </li>
+                                    </ul>
+                                    <img src="savings.jpg" alt="Savings Goals Screenshot" className="feature-screenshot" />
+                                </div>
+                            </div>
 
-          {/* Value Proposition Section */}
-          <section className="value-proposition">
-            <div className="container">
-              <h2 className="section-title">Reasons to Choose PennyPillar For Your Financial Future</h2>
-              <div className="value-proposition-content">
-                <div className="value-item">
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faDollarSign} />
-                  </div>
-                  <h3 className="value-heading">For Every Stage of Wealth</h3>
-                  <p className="value-text">Whether you're just starting to manage your finances or looking to optimize your wealth, our app caters to all. From budgeting for those with modest incomes to advanced strategies for the affluent, we’ve got you covered.</p>
-                </div>
-                <div className="value-item">
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faPiggyBank} />
-                  </div>
-                  <h3 className="value-heading">Simplify Financial Statements</h3>
-                  <p className="value-text">We turn complex financial statements into simple insights. Easily track your income, savings, and expenses to make informed decisions and stay on top of your financial goals.</p>
-                </div>
-                <div className="value-item">
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faChartLine} />
-                  </div>
-                  <h3 className="value-heading">Achieve Financial Clarity</h3>
-                  <p className="value-text">Our intuitive tools help you see exactly where your money goes. Use real-time data to evaluate your spending, savings, and investments to make smarter choices for your financial future.</p>
-                </div>
-              </div>
-              <Link to="/signin" className="cta-button">Start Your Journey</Link>
-            </div>
-          </section>
+                            {/* Carousel Item 3 */}
+                            <div className="carousel-item">
+                                <div className="infographic">
+                                    <div className="infographic-header">
+                                        <h2 className="feature-title">Subscription Management: Track your subscriptions and set payment reminders</h2>
+                                    </div>
+                                    <ul className="feature-list">
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Monitor all your active subscriptions.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Set and manage payment reminders.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Get notifications for upcoming payments.
+                                        </li>
+                                    </ul>
+                                    <img src="subscriptions.jpg" alt="Subscription Management Screenshot" className="feature-screenshot" />
+                                </div>
+                            </div>
 
-          {/* Footer */}
-          <footer className="footer">
-            <div className="footer-container">
-              <div className="branding">
-                <img src="./images/logo.png" alt="App Name Logo" className="footer-logo" />
-                <p className="tagline">Building Wealth, One Step at a Time</p>
-              </div>
-              <div className="footer-nav">
-                <h3>Quick Links</h3>
-                <ul>
-                  <li><Link to="#home">Home</Link></li>
-                  <li><Link to="#about">About Us</Link></li>
-                  <li><Link to="#features">Features</Link></li>
-                  <li><Link to="#contact">Contact Us</Link></li>
-                </ul>
-              </div>
-              <div className="footer-products">
-                <h3>Our Products</h3>
-                <ul>
-                  <li><Link to="/dashboard">Dashboard</Link></li>
-                  <li><Link to="/budget-tools">Budget Tools</Link></li>
-                  <li><Link to="/investment-plans">Investment Plans</Link></li>
-                  <li><Link to="/savings-challenge">Savings Challenge </Link></li>
-                  <li><Link to="/financial-tips">Financial Tips</Link></li>
-                </ul>
-              </div>
-              <div className="footer-legal">
-                <h3>Legal</h3>
-                <ul>
-                  <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                  <li><Link to="/terms-service">Terms of Service</Link></li>
-                </ul>
-              </div>
-              <div className="footer-contact">
-                <h3>Contact Us</h3>
-                <ul>
-                  <li>Email: support@pennypillar.com</li>
-                  <li>Phone: (27) 456-7890</li>
-                </ul>
-              </div>
-            </div>
-          </footer>
-        </main>
-      </div>
-    </div>
-  );
+                            {/* Carousel Item 4 */}
+                            <div className="carousel-item">
+                                <div className="infographic">
+                                    <div className="infographic-header">
+                                        <h2 className="feature-title">Insights: Discover tips and strategies to improve your financial habits</h2>
+                                    </div>
+                                    <ul className="feature-list">
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Get personalized financial tips based on your spending habits.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Access strategies to save money and manage your budget effectively.
+                                        </li>
+                                        <li>
+                                            <svg className="check-icon" viewBox="0 0 24 24">
+                                                <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                                            </svg>
+                                            Discover new ways to enhance your financial well-being.
+                                        </li>
+                                    </ul>
+                                    <img src="insights.jpg" alt="Insights Screenshot" className="feature-screenshot" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Contact Us Section */}
+                    <section className="contact-us">
+                        <h2 className="section-title">Stay Connected</h2>
+                        <div className="contact-info">
+                            <p className="contact-email">Email: info@pennypillar.com</p>
+                            <p className="contact-phone">Phone: (123) 456-7890</p>
+                        </div>
+                        <div className="social-media-links">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faFacebookF} />
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faTwitter} />
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faInstagram} />
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                                <FontAwesomeIcon icon={faLinkedinIn} />
+                            </a>
+                        </div>
+                    </section>
+                </section>
+            </main>
+
+            <footer>
+                <div className="footer-content">
+                    <div className="footer-section">
+                        <h3 className="footer-title">PennyPillar</h3>
+                        <p className="footer-text">Your trusted partner in financial management.</p>
+                    </div>
+                    <div className="footer-section">
+                        <h3 className="footer-title">Quick Links</h3>
+                        <ul className="footer-links">
+                            <li><Link to="#home">Home</Link></li>
+                            <li><Link to="#dashboard">Dashboard</Link></li>
+                            <li><Link to="#cashflow">Cash Flow</Link></li>
+                            <li><Link to="#budget">Budget</Link></li>
+                            <li><Link to="#recurring">Recurring Payments</Link></li>
+                            <li><Link to="#challenge">Penny Challenge</Link></li>
+                            <li><Link to="#login">Login</Link></li>
+                            <li><Link to="#signup">Sign Up</Link></li>
+                            <li><Link to="#about">About Us</Link></li>
+                            <li><Link to="#contact">Contact</Link></li>
+                            <li><Link to="#help">Help</Link></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="footer-bottom">
+                    <p className="footer-text">© 2024 PennyPillar. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    );
 };
 
 export default Homepage;

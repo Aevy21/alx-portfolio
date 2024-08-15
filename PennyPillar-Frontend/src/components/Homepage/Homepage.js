@@ -1,12 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import './Homepage.css'; // Add any additional CSS if needed
-import  { useState } from 'react';
-import '../Footer';
-
-
+import Header from '../Header'; // Ensure the Header component is correctly imported
 
 function Homepage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -73,8 +70,8 @@ function Homepage() {
   };
 
   return (
-    <div>
-      <header />
+    <>
+      <Header />
 
       <div className="main-content">
         <main>
@@ -130,7 +127,7 @@ function Homepage() {
               <div className="value-proposition-content">
                 <div className="value-item">
                   <div className="icon">
-                    <i className="fas fa-dollar-sign"></i>
+                    <FontAwesomeIcon icon={faDollarSign} />
                   </div>
                   <h3 className="value-heading">For Every Stage of Wealth</h3>
                   <p className="value-text">
@@ -139,7 +136,7 @@ function Homepage() {
                 </div>
                 <div className="value-item">
                   <div className="icon">
-                    <i className="fas fa-piggy-bank"></i>
+                    <FontAwesomeIcon icon={faPiggyBank} />
                   </div>
                   <h3 className="value-heading">Simplify Financial Statements</h3>
                   <p className="value-text">
@@ -148,7 +145,7 @@ function Homepage() {
                 </div>
                 <div className="value-item">
                   <div className="icon">
-                    <i className="fas fa-chart-line"></i>
+                    <FontAwesomeIcon icon={faChartLine} />
                   </div>
                   <h3 className="value-heading">Achieve Financial Clarity</h3>
                   <p className="value-text">
@@ -203,7 +200,7 @@ function Homepage() {
           </footer>
         </main>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1,6 +1,6 @@
 // src/pages/Homepage.js
 import React, { useState } from 'react';
-import Header from '../components/Header'; // Import Header component
+import Header from '../Header'; // Import Header component
 import './Homepage.css'; // Import your custom CSS for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';

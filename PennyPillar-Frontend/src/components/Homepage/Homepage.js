@@ -39,25 +39,17 @@ const Homepage = () => {
           {/* Hero Section */}
             <section class="hero-section">
                 <div class="hero-content">
-                    <!-- Logo -->
+                    
                     <div class="hero-logo">
                         <img src="logo.png" alt="PennyPillar Logo">
                     </div>
-                    
-                    <!-- Name -->
                     <h1 class="hero-name">PennyPillar</h1>
                     
                     <!-- Heading -->
                     <h2 class="hero-heading">Unlock Your Financial Potential</h2>
-                    
-                    <!-- Subheading -->
                     <p class="hero-subheading">Empower yourself with tools and insights to make smarter financial decisions.</p>
-                    
-                    <!-- Tagline -->
                     <p class="hero-tagline">Building Wealth, One Step at a Time</p>
-                    
-                    <!-- Call to Action Button -->
-                    <a href="#get-started" class="hero-button">Get Started</a>
+                    <Link to="/signup" class="hero-button">Get Started</Link>
                 </div>
             </section>
 

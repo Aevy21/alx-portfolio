@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import './Homepage.css'; // Add any additional CSS if needed
-import Header from '../Header'; // Ensure the Header component is correctly imported
+import './Homepage.css'; // Ensure this file exists and contains relevant styles
+import Header from '../Header'; // Ensure this import path is correct
 
 function Homepage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -88,8 +87,6 @@ function Homepage() {
             </div>
           </section>
 
-               <section>
-       <div className="page-container">
           <section className="infographic-container">
             <h2 className="section-title">Explore the Features That Matter to You</h2>
             <div className="carousel-container">
@@ -98,8 +95,8 @@ function Homepage() {
                   <div
                     key={index}
                     className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
-                    style={{ backgroundImage: `url(${slide.img})` }}
                   >
+                    <img src={slide.img} alt={slide.title} className="carousel-image" />
                     <div className="infographic">
                       <div className="infographic-header">
                         <h2 className="feature-title">{slide.title}</h2>
@@ -122,8 +119,7 @@ function Homepage() {
               </div>
             </div>
           </section>
-                  <div/>
-     
+
           <section className="value-proposition">
             <div className="container">
               <h2 className="section-title">Reasons to Choose PennyPillar For Your Financial Future</h2>
@@ -208,3 +204,4 @@ function Homepage() {
 }
 
 export default Homepage;
+

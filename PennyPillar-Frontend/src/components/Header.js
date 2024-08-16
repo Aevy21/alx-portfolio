@@ -18,16 +18,20 @@ const Header = ({ isLoggedIn }) => {
             <Link to="/cashflow">Cash Flow/Budget</Link>
             <Link to="/recurring">Recurring Payments</Link>
             <Link to="/challenge">Penny Challenge</Link>
+            <Link to="/profile">Profile</Link>
           </>
         )}
         {!isLoggedIn ? (
           <>
             <Link to="/signin">Sign In</Link>
             <Link to="/signup">Sign Up</Link>
+          
           </>
         ) : null}
         <Link to="/about">About Us</Link>
-        <Link to="/help">Help</Link>
+        <Link to="/help">Help</Link> 
+        <Link to="/profile">Profile</Link>
+          
       </nav>
     </header>
   );

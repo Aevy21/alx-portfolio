@@ -96,7 +96,7 @@ body, html {
 @media (min-width: 768px) {
     .main-content {
         margin-left: 20%; /* Space for the header when on the left */
-        width: calc(80% - 40px); /* Adjust width to account for header padding */
+        width: calc(90% - 40px); /* Adjust width to account for header padding */
         max-width: calc(100% - 40px); /* Avoid content overflow */
     }
 }

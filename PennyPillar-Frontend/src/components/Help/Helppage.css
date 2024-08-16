@@ -121,7 +121,7 @@
         }
 
         .content {
-            margin-top: 10vh; /* Space for fixed header */
+            
             padding: 2rem;
             background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

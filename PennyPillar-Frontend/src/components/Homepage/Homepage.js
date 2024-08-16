@@ -88,6 +88,8 @@ function Homepage() {
             </div>
           </section>
 
+               <section>
+       <div className="page-container">
           <section className="infographic-container">
             <h2 className="section-title">Explore the Features That Matter to You</h2>
             <div className="carousel-container">
@@ -120,7 +122,8 @@ function Homepage() {
               </div>
             </div>
           </section>
-
+                  <div/>
+     
           <section className="value-proposition">
             <div className="container">
               <h2 className="section-title">Reasons to Choose PennyPillar For Your Financial Future</h2>

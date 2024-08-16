@@ -211,7 +211,7 @@
         @media (min-width: 768px) {
             .footer {
                 width: 80%;
-                left: 20%;
+                
                 position: relative;
             }
         }

@@ -242,7 +242,7 @@
             position: relative;
             bottom: 0;
             width: 100%;
-            height: 8vh; /* Footer height */
+            height: fit-content; /* Footer height */
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
             z-index: 999;
         }

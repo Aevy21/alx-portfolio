@@ -88,37 +88,38 @@ function Homepage() {
           </section>
 
           <section className="infographic-container">
-            <h2 className="section-title">Explore the Features That Matter to You</h2>
-            <div className="carousel-container">
-              <div className="carousel">
-                {slides.map((slide, index) => (
-                  <div
-                    key={index}
-                    className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
-                  >
-                    <img src={slide.img} alt={slide.title} className="carousel-image" />
-                    <div className="infographic">
-                      <div className="infographic-header">
-                        <h2 className="feature-title">{slide.title}</h2>
-                      </div>
-                      <ul className="feature-list">
-                        {slide.features.map((feature, i) => (
-                          <li key={i}>
-                            <svg className="check-icon" viewBox="0 0 24 24">
-                              <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
-                            </svg>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+  <h2 className="section-title">Explore the Features That Matter to You</h2>
+  <div className="carousel-container">
+    <div className="carousel">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
+        >
+          <img src={slide.img} alt={slide.title} className="carousel-image" />
+          <div className="infographic">
+            <div className="infographic-content">
+              <h2 className="feature-title">{slide.title}</h2>
+              <ul className="feature-list">
+                {slide.features.map((feature, i) => (
+                  <li key={i}>
+                    <svg className="check-icon" viewBox="0 0 24 24">
+                      <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
+                    </svg>
+                    {feature}
+                  </li>
                 ))}
-                <button className="carousel-nav prev" onClick={goToPrevSlide}>&#10094;</button>
-                <button className="carousel-nav next" onClick={goToNextSlide}>&#10095;</button>
-              </div>
+              </ul>
             </div>
-          </section>
+          </div>
+        </div>
+      ))}
+      <button className="carousel-nav prev" onClick={goToPrevSlide}>&#10094;</button>
+      <button className="carousel-nav next" onClick={goToNextSlide}>&#10095;</button>
+    </div>
+  </div>
+</section>
+
 
           <section className="value-proposition">
             <div className="container">

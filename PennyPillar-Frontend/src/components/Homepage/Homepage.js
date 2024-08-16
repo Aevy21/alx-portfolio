@@ -5,68 +5,6 @@ import './Homepage.css'; // Ensure this file exists and contains relevant styles
 import Header from '../Header'; // Ensure this import path is correct
 
 function Homepage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const slides = [
-    {
-      title: 'Budget Tracking',
-      description: 'Set limits, track expenses, and stay on top of your budget',
-      img: './images/budget.jpg',
-      features: [
-        'Track all your expenses easily.',
-        'Set and manage budget limits.',
-        'Receive notifications for overspending.',
-      ],
-    },
-    {
-      title: 'Savings Goals',
-      description: 'Visualize your savings progress and achieve financial milestones.',
-      img: './images/savings.jpg',
-      features: [
-        'Set and track savings goals.',
-        'Monitor your progress visually.',
-        'Get reminders for saving milestones.',
-      ],
-    },
-    {
-      title: 'Subscription Management',
-      description: 'Track your subscriptions and set payment reminders',
-      img: './images/subscriptions.jpg',
-      features: [
-        'Monitor all your active subscriptions.',
-        'Set and manage payment reminders.',
-        'Get notifications for upcoming payments.',
-      ],
-    },
-    {
-      title: 'Insights',
-      description: 'Discover tips and strategies to improve your financial habits',
-      img: './images/insights.jpg',
-      features: [
-        'Get personalized financial tips based on your spending habits.',
-        'Access strategies to save money and manage your budget effectively.',
-        'Receive expert advice on improving your financial health.',
-      ],
-    },
-    {
-      title: 'Save A Penny a Day',
-      description: 'A fun way to save more by challenging yourself every day',
-      img: './images/penny.jpg',
-      features: [
-        'Set and track savings goals.',
-        'Monitor your progress visually.',
-        'Get reminders for saving milestones.',
-      ],
-    },
-  ];
-
-  const goToNextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  };
-
-  const goToPrevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
-  };
 
   return (
     <>
@@ -87,38 +25,6 @@ function Homepage() {
             </div>
           </section>
 
-          <section className="infographic-container">
-  <h2 className="section-title">Explore the Features That Matter to You</h2>
-  <div className="carousel-container">
-    <div className="carousel">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
-        >
-          <img src={slide.img} alt={slide.title} className="carousel-image" />
-          <div className="infographic">
-            <div className="infographic-content">
-              <h2 className="feature-title">{slide.title}</h2>
-              <ul className="feature-list">
-                {slide.features.map((feature, i) => (
-                  <li key={i}>
-                    <svg className="check-icon" viewBox="0 0 24 24">
-                      <path d="M10 15l-3-3 1.4-1.4L10 12.2l7.6-7.6L19 7l-9 9z"></path>
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      ))}
-      <button className="carousel-nav prev" onClick={goToPrevSlide}>&#10094;</button>
-      <button className="carousel-nav next" onClick={goToNextSlide}>&#10095;</button>
-    </div>
-  </div>
-</section>
 
 
           <section className="value-proposition">

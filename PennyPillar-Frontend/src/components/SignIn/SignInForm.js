@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../Header';
-import Footer from '../Footer';
 import './SignInForm.css';
 import axiosInstance from '../../axiosConfig';
 
@@ -66,7 +65,7 @@ const SignInPage = () => {
                     </form>
                 </div>
             </div>
-            <Footer />
+            
         </>
     );
 };

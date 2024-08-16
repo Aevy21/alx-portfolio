@@ -11,6 +11,10 @@ import Help from './components/Help/Helppage';
 import Challenge from './components/Challenge/Challenge';
 import Profile from './components/Profile/Profile';
 import { Link } from 'react-router-dom';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 
 const App = () => {
     return (

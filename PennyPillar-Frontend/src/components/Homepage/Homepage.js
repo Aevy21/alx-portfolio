@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faPiggyBank, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import Header from '../Header'; // Ensure this path is correct
 import './Homepage.css'; // Ensure this file exists and contains relevant styles
-import './Home.css'; // Include your CSS here
 
 // Sample data for carousel items
 const carouselItems = [

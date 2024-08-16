@@ -23,7 +23,7 @@ const App = () => {
                 <Route path="/policy" element={<Policy/>} />
                 <Route path="/help" element={<Help/>} />
                 <Route path="/challenge" element={<Challenge/>} />
-                <Route path="/Profile" element={<Profile/>}
+                <Route path="/Profile" element={<Profile/>} />
                 {/* Add other routes as necessary */}
             </Routes>
         </Router>

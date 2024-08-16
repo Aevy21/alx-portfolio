@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Profile.css'; // Import the CSS file for styling
+import './Profile.css';
+import { Link } from 'react-router-dom';
 
 const Profile= () => {
     const [firstName, setFirstName] = useState('');

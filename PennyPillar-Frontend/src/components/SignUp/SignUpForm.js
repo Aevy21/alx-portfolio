@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../Header';
-import Footer from '../Footer';
 import './SignUpForm.css';
 import axiosInstance from '../../axiosConfig';
 
@@ -101,7 +100,7 @@ const SignUpPage = () => {
                 </div>
             </div>
 
-            <Footer />
+            
         </>
     );
 };

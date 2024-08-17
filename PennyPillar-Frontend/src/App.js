@@ -10,10 +10,9 @@ import Policy from './components/Policy/Policies';
 import Help from './components/Help/Helppage';
 import Challenge from './components/Challenge/Challenge';
 import Profile from './components/Profile/Profile';
-import { Link } from 'react-router-dom';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Budget from './components/Budget/Budget';
 
+import { Link } from 'react-router-dom';
 
 
 const App = () => {
@@ -28,6 +27,7 @@ const App = () => {
                 <Route path="/help" element={<Help/>} />
                 <Route path="/challenge" element={<Challenge/>} />
                 <Route path="/Profile" element={<Profile/>} />
+                <Route path="/cashflow" element={<Budget/>} />
                 {/* Add other routes as necessary */}
             </Routes>
         </Router>

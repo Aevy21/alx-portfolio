@@ -11,6 +11,7 @@ import Help from './components/Help/Helppage';
 import Challenge from './components/Challenge/Challenge';
 import Profile from './components/Profile/Profile';
 import Budget from './components/Budget/Budget';
+import Dashboard from './components/Dashboard/Dashboard';
 
 import { Link } from 'react-router-dom';
 
@@ -20,6 +21,8 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<Homepage />} />
+                 <Route path="/dashboard" element={<Dashboard />} />
+                
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/signup" element={<SignUp/>} />
                 <Route path="/about" element={<About/>} />

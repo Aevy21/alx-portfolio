@@ -1,7 +1,6 @@
  import React, { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
+
 import './Dashboard.css';
 
 Chart.register(...registerables);

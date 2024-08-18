@@ -1,43 +1,16 @@
- import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
-
 import './Dashboard.css';
 
 Chart.register(...registerables);
 
 const Dashboard = () => {
-    const calendarRef = useRef(null);
     const budgetChartRef = useRef(null);
     const cashFlowChartRef = useRef(null);
     const recurringChartRef = useRef(null);
     const challengeChartRef = useRef(null);
 
     useEffect(() => {
-        // Initialize FullCalendar
-        if (calendarRef.current) {
-            const calendar = new FullCalendar.Calendar(calendarRef.current, {
-                initialView: 'dayGridMonth',
-                headerToolbar: {
-                    left: '',
-                    center: 'title',
-                    right: ''
-                },
-                titleFormat: { 
-                    year: 'numeric', 
-                    month: 'long' 
-                },
-                dayCellDidMount: function (info) {
-                    const today = new Date();
-                    const cellDate = info.date;
-
-                    if (cellDate < today && cellDate.getMonth() === today.getMonth() && cellDate.getFullYear() === today.getFullYear()) {
-                        info.el.classList.add('highlight-past');
-                    }
-                }
-            });
-            calendar.render();
-        }
-
         // Initialize Chart.js for Budget Overview
         if (budgetChartRef.current) {
             new Chart(budgetChartRef.current, {
@@ -227,8 +200,6 @@ const Dashboard = () => {
 
     return (
         <div className="content">
-            <div id="calendar" className="calendar-container" ref={calendarRef}></div>
-
             <div className="chart-container" id="budget">
                 <div className="chart-header">Budget Overview</div>
                 <div className="chart-body">

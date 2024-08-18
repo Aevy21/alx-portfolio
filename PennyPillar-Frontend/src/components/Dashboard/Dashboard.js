@@ -52,10 +52,35 @@ const Dashboard = () => {
         }
     };
 
+    const destroyCharts = () => {
+        if (budgetChartRef.current) {
+            if (budgetChartRef.current.chartInstance) {
+                budgetChartRef.current.chartInstance.destroy();
+            }
+        }
+        if (cashFlowChartRef.current) {
+            if (cashFlowChartRef.current.chartInstance) {
+                cashFlowChartRef.current.chartInstance.destroy();
+            }
+        }
+        if (recurringChartRef.current) {
+            if (recurringChartRef.current.chartInstance) {
+                recurringChartRef.current.chartInstance.destroy();
+            }
+        }
+        if (challengeChartRef.current) {
+            if (challengeChartRef.current.chartInstance) {
+                challengeChartRef.current.chartInstance.destroy();
+            }
+        }
+    };
+
     const initializeCharts = () => {
+        destroyCharts();
+
         // Initialize Budget Chart
         if (budgetChartRef.current) {
-            new Chart(budgetChartRef.current, {
+            budgetChartRef.current.chartInstance = new Chart(budgetChartRef.current, {
                 type: 'bar',
                 data: {
                     labels: ['Total Budget', 'Spent', 'Remaining'],
@@ -102,7 +127,7 @@ const Dashboard = () => {
 
         // Initialize Cash Flow Chart
         if (cashFlowChartRef.current) {
-            new Chart(cashFlowChartRef.current, {
+            cashFlowChartRef.current.chartInstance = new Chart(cashFlowChartRef.current, {
                 type: 'line',
                 data: {
                     labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
@@ -141,7 +166,7 @@ const Dashboard = () => {
 
         // Initialize Recurring Payments Chart
         if (recurringChartRef.current) {
-            new Chart(recurringChartRef.current, {
+            recurringChartRef.current.chartInstance = new Chart(recurringChartRef.current, {
                 type: 'pie',
                 data: {
                     labels: ['Rent', 'Utilities', 'Subscriptions'],
@@ -188,7 +213,7 @@ const Dashboard = () => {
 
         // Initialize Penny Challenge Chart
         if (challengeChartRef.current) {
-            new Chart(challengeChartRef.current, {
+            challengeChartRef.current.chartInstance = new Chart(challengeChartRef.current, {
                 type: 'line',
                 data: {
                     labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4'],
@@ -238,22 +263,6 @@ const Dashboard = () => {
                 }
             });
         }
-
-        // Cleanup on component unmount
-        return () => {
-            if (budgetChartRef.current) {
-                budgetChartRef.current.chartInstance?.destroy();
-            }
-            if (cashFlowChartRef.current) {
-                cashFlowChartRef.current.chartInstance?.destroy();
-            }
-            if (recurringChartRef.current) {
-                recurringChartRef.current.chartInstance?.destroy();
-            }
-            if (challengeChartRef.current) {
-                challengeChartRef.current.chartInstance?.destroy();
-            }
-        };
     };
 
     return (
@@ -273,18 +282,13 @@ const Dashboard = () => {
                     <div className="chart-body">
                         <canvas id="budgetChart" ref={budgetChartRef}></canvas>
                         <div className="safe-to-spend-container">
-                            <div className="safe-to-spend-header">
-                                <div className="safe-to-spend-label">Safe to Spend</div>
-                                <button className="safe-to-spend-button" onClick={() => window.location.href = 'budget-check.html'}>
-                                    Check Budget
-                                </button>
-                            </div>
-                            <div className="safe-to-spend-amount">$800</div>
+                            <div className="safe-to-spend-label">Safe to Spend:</div>
+                            <div className="safe-to-spend-amount">$200</div> {/* Placeholder value */}
                         </div>
                     </div>
                 </div>
 
-                <div className="chart-container" id="cashflow">
+                <div className="chart-container" id="cash-flow">
                     <div className="chart-header">Cash Flow</div>
                     <div className="chart-body">
                         <canvas id="cashFlowChart" ref={cashFlowChartRef}></canvas>

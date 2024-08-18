@@ -1,24 +1,61 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Chart, registerables } from 'chart.js';
 import './Dashboard.css';
 
 Chart.register(...registerables);
 
 const Dashboard = () => {
+    const [month, setMonth] = useState(new Date().getMonth());
+    const [year, setYear] = useState(new Date().getFullYear());
+
     const budgetChartRef = useRef(null);
     const cashFlowChartRef = useRef(null);
     const recurringChartRef = useRef(null);
     const challengeChartRef = useRef(null);
 
     useEffect(() => {
-        let budgetChartInstance;
-        let cashFlowChartInstance;
-        let recurringChartInstance;
-        let challengeChartInstance;
+        renderCalendar();
+        initializeCharts();
+    }, [month, year]);
 
-        // Destroy any existing chart instances before creating new ones
+    const renderCalendar = () => {
+        const calendarDays = document.getElementById('calendar-days');
+        if (calendarDays) {
+            calendarDays.innerHTML = '';
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+
+            // Add blank days for the first week
+            for (let i = 0; i < firstDay; i++) {
+                const blankDay = document.createElement('div');
+                blankDay.className = 'calendar-day blank-day';
+                calendarDays.appendChild(blankDay);
+            }
+
+            // Add the actual days
+            for (let i = 1; i <= lastDate; i++) {
+                const day = document.createElement('div');
+                day.className = 'calendar-day';
+                day.textContent = i;
+                calendarDays.appendChild(day);
+            }
+        }
+    };
+
+    const changeMonth = (direction) => {
+        setMonth((prevMonth) => (prevMonth + direction + 12) % 12);
+        if (direction === -1 && month === 0) {
+            setYear((prevYear) => prevYear - 1);
+        } else if (direction === 1 && month === 11) {
+            setYear((prevYear) => prevYear + 1);
+        }
+    };
+
+    const initializeCharts = () => {
+        // Initialize Budget Chart
         if (budgetChartRef.current) {
-            budgetChartInstance = new Chart(budgetChartRef.current, {
+            new Chart(budgetChartRef.current, {
                 type: 'bar',
                 data: {
                     labels: ['Total Budget', 'Spent', 'Remaining'],
@@ -63,8 +100,9 @@ const Dashboard = () => {
             });
         }
 
+        // Initialize Cash Flow Chart
         if (cashFlowChartRef.current) {
-            cashFlowChartInstance = new Chart(cashFlowChartRef.current, {
+            new Chart(cashFlowChartRef.current, {
                 type: 'line',
                 data: {
                     labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
@@ -101,8 +139,9 @@ const Dashboard = () => {
             });
         }
 
+        // Initialize Recurring Payments Chart
         if (recurringChartRef.current) {
-            recurringChartInstance = new Chart(recurringChartRef.current, {
+            new Chart(recurringChartRef.current, {
                 type: 'pie',
                 data: {
                     labels: ['Rent', 'Utilities', 'Subscriptions'],
@@ -147,8 +186,9 @@ const Dashboard = () => {
             });
         }
 
+        // Initialize Penny Challenge Chart
         if (challengeChartRef.current) {
-            challengeChartInstance = new Chart(challengeChartRef.current, {
+            new Chart(challengeChartRef.current, {
                 type: 'line',
                 data: {
                     labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4'],
@@ -201,49 +241,68 @@ const Dashboard = () => {
 
         // Cleanup on component unmount
         return () => {
-            if (budgetChartInstance) budgetChartInstance.destroy();
-            if (cashFlowChartInstance) cashFlowChartInstance.destroy();
-            if (recurringChartInstance) recurringChartInstance.destroy();
-            if (challengeChartInstance) challengeChartInstance.destroy();
+            if (budgetChartRef.current) {
+                budgetChartRef.current.chartInstance?.destroy();
+            }
+            if (cashFlowChartRef.current) {
+                cashFlowChartRef.current.chartInstance?.destroy();
+            }
+            if (recurringChartRef.current) {
+                recurringChartRef.current.chartInstance?.destroy();
+            }
+            if (challengeChartRef.current) {
+                challengeChartRef.current.chartInstance?.destroy();
+            }
         };
-    }, []);
+    };
 
     return (
-        <div className="content">
-            <div className="chart-container" id="budget">
-                <div className="chart-header">Budget Overview</div>
-                <div className="chart-body">
-                    <canvas id="budgetChart" ref={budgetChartRef}></canvas>
-                    <div className="safe-to-spend-container">
-                        <div className="safe-to-spend-header">
-                            <div className="safe-to-spend-label">Safe to Spend</div>
-                            <button className="safe-to-spend-button" onClick={() => window.location.href = 'budget-check.html'}>
-                                Check Budget
-                            </button>
+        <div className="dashboard-container">
+            <div className="calendar-container">
+                <div className="calendar-header">
+                    <button onClick={() => changeMonth(-1)}>Prev</button>
+                    <div>{`${month + 1}/${year}`}</div>
+                    <button onClick={() => changeMonth(1)}>Next</button>
+                </div>
+                <div id="calendar-days" className="calendar-days"></div>
+            </div>
+
+            <div className="charts-section">
+                <div className="chart-container" id="budget">
+                    <div className="chart-header">Budget Overview</div>
+                    <div className="chart-body">
+                        <canvas id="budgetChart" ref={budgetChartRef}></canvas>
+                        <div className="safe-to-spend-container">
+                            <div className="safe-to-spend-header">
+                                <div className="safe-to-spend-label">Safe to Spend</div>
+                                <button className="safe-to-spend-button" onClick={() => window.location.href = 'budget-check.html'}>
+                                    Check Budget
+                                </button>
+                            </div>
+                            <div className="safe-to-spend-amount">$800</div>
                         </div>
-                        <div className="safe-to-spend-amount">$800</div>
                     </div>
                 </div>
-            </div>
 
-            <div className="chart-container" id="cashflow">
-                <div className="chart-header">Cash Flow</div>
-                <div className="chart-body">
-                    <canvas id="cashFlowChart" ref={cashFlowChartRef}></canvas>
+                <div className="chart-container" id="cashflow">
+                    <div className="chart-header">Cash Flow</div>
+                    <div className="chart-body">
+                        <canvas id="cashFlowChart" ref={cashFlowChartRef}></canvas>
+                    </div>
                 </div>
-            </div>
 
-            <div className="chart-container" id="recurring">
-                <div className="chart-header">Recurring Payments</div>
-                <div className="chart-body">
-                    <canvas id="recurringChart" ref={recurringChartRef}></canvas>
+                <div className="chart-container" id="recurring">
+                    <div className="chart-header">Recurring Payments</div>
+                    <div className="chart-body">
+                        <canvas id="recurringChart" ref={recurringChartRef}></canvas>
+                    </div>
                 </div>
-            </div>
 
-            <div className="chart-container" id="challenge">
-                <div className="chart-header">Penny Challenge</div>
-                <div className="chart-body">
-                    <canvas id="challengeChart" ref={challengeChartRef}></canvas>
+                <div className="chart-container" id="challenge">
+                    <div className="chart-header">Penny Challenge</div>
+                    <div className="chart-body">
+                        <canvas id="challengeChart" ref={challengeChartRef}></canvas>
+                    </div>
                 </div>
             </div>
         </div>

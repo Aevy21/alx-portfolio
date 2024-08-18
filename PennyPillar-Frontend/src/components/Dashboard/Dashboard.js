@@ -11,9 +11,14 @@ const Dashboard = () => {
     const challengeChartRef = useRef(null);
 
     useEffect(() => {
-        // Initialize Chart.js for Budget Overview
+        let budgetChartInstance;
+        let cashFlowChartInstance;
+        let recurringChartInstance;
+        let challengeChartInstance;
+
+        // Destroy any existing chart instances before creating new ones
         if (budgetChartRef.current) {
-            new Chart(budgetChartRef.current, {
+            budgetChartInstance = new Chart(budgetChartRef.current, {
                 type: 'bar',
                 data: {
                     labels: ['Total Budget', 'Spent', 'Remaining'],
@@ -41,7 +46,7 @@ const Dashboard = () => {
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     let label = context.dataset.label || '';
                                     if (label) {
                                         label += ': ';
@@ -58,9 +63,8 @@ const Dashboard = () => {
             });
         }
 
-        // Initialize Chart.js for Cash Flow
         if (cashFlowChartRef.current) {
-            new Chart(cashFlowChartRef.current, {
+            cashFlowChartInstance = new Chart(cashFlowChartRef.current, {
                 type: 'line',
                 data: {
                     labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
@@ -80,7 +84,7 @@ const Dashboard = () => {
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     let label = context.dataset.label || '';
                                     if (label) {
                                         label += ': ';
@@ -97,9 +101,8 @@ const Dashboard = () => {
             });
         }
 
-        // Initialize Chart.js for Recurring Payments
         if (recurringChartRef.current) {
-            new Chart(recurringChartRef.current, {
+            recurringChartInstance = new Chart(recurringChartRef.current, {
                 type: 'pie',
                 data: {
                     labels: ['Rent', 'Utilities', 'Subscriptions'],
@@ -127,7 +130,7 @@ const Dashboard = () => {
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     let label = context.dataset.label || '';
                                     if (label) {
                                         label += ': ';
@@ -144,9 +147,8 @@ const Dashboard = () => {
             });
         }
 
-        // Initialize Chart.js for Penny Challenge
         if (challengeChartRef.current) {
-            new Chart(challengeChartRef.current, {
+            challengeChartInstance = new Chart(challengeChartRef.current, {
                 type: 'line',
                 data: {
                     labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4'],
@@ -166,7 +168,7 @@ const Dashboard = () => {
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     let label = context.dataset.label || '';
                                     if (label) {
                                         label += ': ';
@@ -177,25 +179,33 @@ const Dashboard = () => {
                                     return label;
                                 }
                             }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Days'
-                            }
                         },
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'Amount Saved ($)'
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Days'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Amount Saved ($)'
+                                }
                             }
                         }
                     }
                 }
             });
         }
+
+        // Cleanup on component unmount
+        return () => {
+            if (budgetChartInstance) budgetChartInstance.destroy();
+            if (cashFlowChartInstance) cashFlowChartInstance.destroy();
+            if (recurringChartInstance) recurringChartInstance.destroy();
+            if (challengeChartInstance) challengeChartInstance.destroy();
+        };
     }, []);
 
     return (

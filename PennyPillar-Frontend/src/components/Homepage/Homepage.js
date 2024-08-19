@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Homepage.css'; // Import your CSS file
-import Carousel from './Carousel; // Adjust the path as necessary
+import Carousel from './Carousel'; // Adjust the path as necessary
 import UserGuide from './UserGuide'; // Import the UserGuide component
 
 const Homepage = () => {
@@ -56,9 +56,9 @@ const Homepage = () => {
           </section>
 
           <section>
-            <div className="page-container">
+          
               <Carousel />
-            </div>
+            
 
             {/* User Guide Section */}
             <UserGuide />

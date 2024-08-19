@@ -95,9 +95,6 @@ const UserGuide = () => {
                     </div>
                 </div>
             </main>
-            <footer>
-                <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-            </footer>
         </div>
     );
 };

@@ -4,6 +4,26 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = ({ isLoggedIn }) => {
+  const [profilePicture, setProfilePicture] = useState('/path/to/profile-picture.png'); // Replace with actual profile picture URL or null
+  const navigate = useNavigate(); const handleLogout = (event) => {
+    event.preventDefault();
+    fetch('/logout/', { method: 'POST' })
+      .then(response => {
+        if (response.ok) {
+          // Navigate to home after logout
+          navigate('/');
+        }
+      })
+      .catch(error => console.error('Logout failed:', error.message));
+  };
+
+  const handleProfileClick = () => {
+    // Navigate to the profile form page
+    navigate('/profile');
+  };
+
+  
+
   return (
     <header className="header">
       <div className="logo">PennyPillar</div>
@@ -19,6 +39,7 @@ const Header = ({ isLoggedIn }) => {
             <Link to="/recurring">Recurring Payments</Link>
             <Link to="/challenge">Penny Challenge</Link>
             <Link to="/profile">Profile</Link>
+            <Link to="/logout" onClick={handleLogout}>Logout</Link>
           </>
         )}
         {!isLoggedIn ? (
